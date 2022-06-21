@@ -4,22 +4,32 @@ using namespace std;
 
 int main()
 {	
-	
-	int n;
-	cin >> n;
 
-	for (int i = 1; i <= n; ++i)
+
+	//배열 작은값을 앞으로 변경
+	int arr[10] = { 10, 3, 4, 17, 20, 30, 14, 21, 19, 7 };
+
+	for (int i = 0; i < 10; ++i)
 	{
-		for (int j = 0; j <= n - 1; ++j)
+		int lowest = i;
+		for (int j = i + 1; j < 10; ++j)
 		{
-			cout << "";
-			for (int k; k = j+1; ++k)
-			{
-				cout << "*";
-			}
+			if (arr[lowest] > arr[j])
+				lowest = j;
 		}
-		cout << "";
+
+			int temp = arr[lowest];
+			arr[lowest] = arr[i];
+			arr[i] = temp;
+		
 	}
+	for (int itr : arr)
+	{
+		cout << itr << " ";
+	}
+	
+
+
 	/*
 	float tall, weight = { 0 };
 	cin >> tall >> weight;
