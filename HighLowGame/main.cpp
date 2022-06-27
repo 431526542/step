@@ -13,12 +13,16 @@ using namespace std;
 void main()
 {
 	Initialize();
-	Shuffle();
-	/*
-	//카드출력
-	for (int i = 0; i < Max; ++i)
+	while (1)
 	{
-		cout << "Mark = " << cards[i].mark<< " " << "Number = " << cards[i].number << endl;
-	}*/
-	CardChoice();
+		Shuffle();
+		/*
+		//카드출력
+		for (int i = 0; i < Max; ++i)
+		{
+			cout << "Mark = " << cards[i].mark<< " " << "Number = " << cards[i].number << endl;
+		}*/
+		CardChoice();
+	}
+	
 }
