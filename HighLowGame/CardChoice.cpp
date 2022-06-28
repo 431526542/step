@@ -7,8 +7,9 @@
 
 using namespace std;
 
-void CardChoice()
+void CardChoice(int& money, const int& chip)
 {
+	//cout << "배팅한 금액 : " << chip << endl;
 	int pick;
 	int Nondisclosure; //비공개카드
 	cout << "52개 카드가 있습니다. 몇번째 카드를 뽑으시겠습니까?";
@@ -44,21 +45,25 @@ void CardChoice()
 		if (cards[pick].number < cards[Nondisclosure].number)
 		{
 			cout << "정답" << endl;
+			money += chip * 2;
 		}
 		else if (cards[pick].number == cards[Nondisclosure].number)
 		{
 			if (cards[pick].mark < cards[Nondisclosure].mark)
 			{
 				cout << "정답" << endl;
+				money += chip * 2;
 			}
 			else
 			{
 				cout << "땡" << endl;
+				money -= chip;
 			}
 		}
 		else
 		{
 			cout << "땡" << endl;
+			money -= chip;
 		}
 	}
 	else //false
@@ -66,21 +71,25 @@ void CardChoice()
 		if (cards[pick].number > cards[Nondisclosure].number)
 		{
 			cout << "정답" << endl;
+			money += chip * 2;
 		}
 		else if (cards[pick].number == cards[Nondisclosure].number)
 		{
 			if (cards[pick].mark > cards[Nondisclosure].mark)
 			{
 				cout << "정답" << endl;
+				money += chip * 2;
 			}
 			else
 			{
 				cout << "땡" << endl;
+				money -= chip;
 			}
 		}
 		else
 		{
 			cout << "땡" << endl;
+			money -= chip;
 		}
 	}
 
