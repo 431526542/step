@@ -1,6 +1,8 @@
 #pragma once
 #include "Actor.h"
 #include "Texture.h"
+#include "SDL.h"
+#include<iostream>
 
 class Monster : public Actor
 {
@@ -18,7 +20,6 @@ public:
 		MyTexture = nullptr;
 	}
 
-
 	Monster(int NewX, int NewY)
 	{
 		Shape = 'M';
@@ -30,10 +31,16 @@ public:
 		Location.Y = NewY;
 
 		MyTexture = new Texture("./Data/slime.bmp", 255, 255, 255);
+
+		srand((unsigned int)(time(nullptr)));
 	}
+
 	virtual ~Monster() {}
 
 	virtual void Tick() override;
+
 	bool Predict(int NewX, int NewY);
+
+	Uint64 ProcessTime = 500;
 };
 

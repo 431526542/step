@@ -1,2 +1,8 @@
-﻿  Process.cpp
-  L20220719.vcxproj -> C:\work\L20220719\Debug\L20220719.exe
+﻿  Draw.cpp
+  input.cpp
+  main.cpp
+  Map.cpp
+  Player.cpp
+  Process.cpp
+  Generating Code...
+  L20220719.vcxproj -> C:\work\step\L20220719\Debug\L20220719.exe

@@ -34,6 +34,8 @@ public:
 	virtual void Tick();
 	virtual void Render();
 
+	bool Predict(int NewX, int NewY);
+
 	int SortOrder = 0;
 
 	bool bCollisionEnabled = true;

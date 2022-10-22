@@ -35,10 +35,7 @@ public:
 	virtual void Tick() override;
 	virtual void Render() override;
 
-	bool Predict(int NewX, int NewY);
-
 	int SpriteIndexX = 0;
 	int SpriteIndexY = 0;
-
 };
 

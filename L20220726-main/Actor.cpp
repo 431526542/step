@@ -2,6 +2,7 @@
 #include <iostream>
 #include <Windows.h>
 #include "Engine.h"
+#include "World.h"
 
 void Actor::Tick()
 {
@@ -31,6 +32,19 @@ void Actor::Render()
         &SourceRect,
         &Destination);
 
+}
 
+bool Actor::Predict(int NewX, int NewY)
+{
+    for (auto CurrentActor : GEngine->MyWorld->ActorList)
+    {
+        if (CurrentActor->bCollisionEnabled &&
+            CurrentActor->Location.X == NewX &&
+            CurrentActor->Location.Y == NewY)
+        {
+            return false;
+        }
+    }
 
+    return true;
 }
